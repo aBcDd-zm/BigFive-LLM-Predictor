@@ -270,7 +270,7 @@ pred_O,pred_C,pred_E,pred_A,pred_N
 score = 6 - score
 ```
 
-当前阶段采用“机制优先”：60 道题的 `reverse` 暂时全部为 `False`，仅表示尚未人工确认，不代表正式量表键值。人工复核表见：
+当前 60 道题的题干、维度归属和反向计分已按官方中文 BFI-2 self-report form and scoring key 复核。共 30 道题 `reverse=True`。复核记录见：
 
 ```text
 docs/BFI_ITEM_REVIEW.md

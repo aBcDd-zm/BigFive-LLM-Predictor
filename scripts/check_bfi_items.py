@@ -13,6 +13,8 @@ from constant import BFI_TRAIT_ORDER, Constant  # noqa: E402
 
 REQUIRED_FIELDS = ("index", "id", "text", "trait", "reverse")
 VALID_TRAITS = set(BFI_TRAIT_ORDER)
+EXPECTED_ITEMS_PER_TRAIT = 12
+EXPECTED_REVERSE_COUNT = 30
 
 
 def _describe_item(item, position):
@@ -75,6 +77,23 @@ def validate_bfi_items(items):
                 )
         reverse_counts[reverse] += 1
 
+    invalid_trait_counts = {
+        trait: count
+        for trait, count in trait_counts.items()
+        if count != EXPECTED_ITEMS_PER_TRAIT
+        }
+    if invalid_trait_counts:
+        raise ValueError(
+            "BFI-2 trait distribution must be 12 items per trait. "
+            f"Got: {dict(trait_counts)}."
+            )
+
+    if reverse_counts[True] != EXPECTED_REVERSE_COUNT:
+        raise ValueError(
+            f"BFI-2 must have {EXPECTED_REVERSE_COUNT} reverse-keyed items, "
+            f"got {reverse_counts[True]}."
+            )
+
     return {
         "total_items": len(items),
         "trait_counts": trait_counts,
@@ -96,8 +115,8 @@ def print_stats(stats):
     print(f"- reverse=False: {stats['reverse_counts'].get(False, 0)}")
     print()
     print("Note:")
-    print("Current reverse values may still be placeholders.")
-    print("Please confirm final BFI keying manually before running real model evaluation.")
+    print("Current trait and reverse values follow the official Chinese BFI-2 scoring key.")
+    print("If the project switches to a different BFI version, re-confirm the keying first.")
 
 
 def main():

@@ -27,8 +27,8 @@ def test_convert_scores_uses_forward_scores():
     assert scores["pred_extraversion"] == 5
     assert scores["pred_agreeableness"] == 4
     assert scores["pred_conscientiousness"] == 3
-    assert scores["pred_negative_emotionality"] == 2
-    assert scores["pred_open_mindedness"] == 1
+    assert scores["pred_negative_emotionality"] == 4
+    assert scores["pred_open_mindedness"] == 5
 
 
 def test_convert_scores_applies_reverse_scoring(monkeypatch):

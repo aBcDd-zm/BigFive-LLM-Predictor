@@ -1,66 +1,66 @@
 # BFI Item Review Table
 
-Generated from `Constant.BFI_ITEMS`. The `trait` and `reverse` values are exported as-is for manual review.
+Generated from `Constant.BFI_ITEMS`. The `trait`, `reverse`, and item wording values have been reviewed against the official Chinese BFI-2 scoring key.
 
 | index | id | trait | reverse | text | suggested_review_status | reviewer_note |
 |---:|---|---|---|---|---|---|
-| 0 | X3 | extraversion | False | 我是一个性格外向、喜欢交际的人 | 待人工确认 |  |
-| 1 | X4 | agreeableness | False | 我是一个心肠柔软、有同情心的人 | 待人工确认 |  |
-| 2 | X5 | conscientiousness | False | 我是一个有条理的人 | 待人工确认 |  |
-| 3 | X6 | negative_emotionality | False | 我是一个焦躁、很难处理压力的人 | 待人工确认 |  |
-| 4 | X7 | open_mindedness | False | 我是一个对艺术感兴趣的人 | 待人工确认 |  |
-| 5 | X8 | extraversion | False | 我是一个性格坚定自信、敢于表达自己的观点的人 | 待人工确认 |  |
-| 6 | X9 | agreeableness | False | 我是一个为人恭敬、谦虚、尊重他人的人 | 待人工确认 |  |
-| 7 | X10 | conscientiousness | False | 我是一个比较懒的人 | 待人工确认 |  |
-| 8 | X11 | negative_emotionality | False | 我是一个经历挫折后仍能保持积极心态的人 | 待人工确认 |  |
-| 9 | X12 | open_mindedness | False | 我是一个对许多不同的事物都感兴趣的人 | 待人工确认 |  |
-| 10 | X13 | extraversion | False | 我是一个经常觉得兴奋或者特别想要做什么的人 | 待人工确认 |  |
-| 11 | X14 | agreeableness | False | 我是一个常常包容别人的毛病的人 | 待人工确认 |  |
-| 12 | X15 | conscientiousness | False | 我是一个比较活泼的人 | 待人工确认 |  |
-| 13 | X16 | negative_emotionality | False | 我是一个喜怒无常、情绪起伏较多的人 | 待人工确认 |  |
-| 14 | X17 | open_mindedness | False | 我是一个善于创造、能找到聪明的方法来做事的人 | 待人工确认 |  |
-| 15 | X18 | extraversion | False | 我是一个比较安静的人 | 待人工确认 |  |
-| 16 | X19 | agreeableness | False | 我是一个对他人有同情心的人 | 待人工确认 |  |
-| 17 | X20 | conscientiousness | False | 我是一个做事有计划有条理的人 | 待人工确认 |  |
-| 18 | X21 | negative_emotionality | False | 我是一个容易紧张的人 | 待人工确认 |  |
-| 19 | X22 | open_mindedness | False | 我是一个着迷与艺术、音乐和文学的人 | 待人工确认 |  |
-| 20 | X23 | extraversion | False | 我是一个常常处于主导地位、像一个领导一样的人 | 待人工确认 |  |
-| 21 | X24 | agreeableness | False | 我是一个常与他人意见统一的人 | 待人工确认 |  |
-| 22 | X25 | conscientiousness | False | 我是一个很容易行动起来去完成一项任务的人 | 待人工确认 |  |
-| 23 | X26 | negative_emotionality | False | 我是一个觉得没有安全感、对自己不满意的人 | 待人工确认 |  |
-| 24 | X27 | open_mindedness | False | 我是一个喜欢知识性或者哲学性强的讨论的人 | 待人工确认 |  |
-| 25 | X28 | extraversion | False | 我是一个比别人有活力的人 | 待人工确认 |  |
-| 26 | X29 | agreeableness | False | 我是一个宽宏大量的人 | 待人工确认 |  |
-| 27 | X30 | conscientiousness | False | 我是一个总是有责任心的人 | 待人工确认 |  |
-| 28 | X31 | negative_emotionality | False | 我是一个情绪不稳定、易生气的人 | 待人工确认 |  |
-| 29 | X32 | open_mindedness | False | 我是一个有创造性的人 | 待人工确认 |  |
-| 30 | X33 | extraversion | False | 我是一个很少害羞、比较外向的人 | 待人工确认 |  |
-| 31 | X34 | agreeableness | False | 我是一个乐于助人、对待别人无私的人 | 待人工确认 |  |
-| 32 | X35 | conscientiousness | False | 我是一个习惯让事物保持整洁有序的人 | 待人工确认 |  |
-| 33 | X36 | negative_emotionality | False | 我是一个时常忧心忡忡担心很多事情的人 | 待人工确认 |  |
-| 34 | X37 | open_mindedness | False | 我是一个重视艺术与审美的人 | 待人工确认 |  |
-| 35 | X38 | extraversion | False | 我感觉自己容易对他人产生影响 | 待人工确认 |  |
-| 36 | X39 | agreeableness | False | 我是一个对人比较体贴的人 | 待人工确认 |  |
-| 37 | X40 | conscientiousness | False | 我是一个有效率、做事有始有终的人 | 待人工确认 |  |
-| 38 | X41 | negative_emotionality | False | 我是一个时常觉得悲伤的人 | 待人工确认 |  |
-| 39 | X42 | open_mindedness | False | 我是一个思想深刻的人 | 待人工确认 |  |
-| 40 | X43 | extraversion | False | 我是一个精力充沛的人 | 待人工确认 |  |
-| 41 | X44 | agreeableness | False | 我是一个相信别人、相信别人意图的人 | 待人工确认 |  |
-| 42 | X45 | conscientiousness | False | 我是一个可靠的、总是值得他人信赖的人 | 待人工确认 |  |
-| 43 | X46 | negative_emotionality | False | 我是一个很难控制自己的情绪的人 | 待人工确认 |  |
-| 44 | X47 | open_mindedness | False | 我是一个充满想象力的人 | 待人工确认 |  |
-| 45 | X48 | extraversion | False | 我是一个爱说话、健谈的人 | 待人工确认 |  |
-| 46 | X49 | agreeableness | False | 我是一个会对人热情、关心他人的人 | 待人工确认 |  |
-| 47 | X50 | conscientiousness | False | 我是一个整洁的、爱收拾的人 | 待人工确认 |  |
-| 48 | X51 | negative_emotionality | False | 我是一个时常觉得焦虑、或者害怕的人 | 待人工确认 |  |
-| 49 | X52 | open_mindedness | False | 我是一个觉得诗歌、戏剧很有趣的人 | 待人工确认 |  |
-| 50 | X53 | extraversion | False | 我是一个更喜欢自己来领头负责的人 | 待人工确认 |  |
-| 51 | X54 | agreeableness | False | 我是一个待人谦逊礼让的人 | 待人工确认 |  |
-| 52 | X55 | conscientiousness | False | 我是一个有恒心、能坚持把事情做完的人 | 待人工确认 |  |
-| 53 | X56 | negative_emotionality | False | 我是一个时常觉得郁郁寡欢的人 | 待人工确认 |  |
-| 54 | X57 | open_mindedness | False | 我是一个对抽象的概念和想法很有兴趣的人 | 待人工确认 |  |
-| 55 | X58 | extraversion | False | 我是一个充满热情的人 | 待人工确认 |  |
-| 56 | X59 | agreeableness | False | 我是一个把人往最好的方面想的人 | 待人工确认 |  |
-| 57 | X60 | conscientiousness | False | 我是一个总是会做出负责任的行为的人 | 待人工确认 |  |
-| 58 | X61 | negative_emotionality | False | 我是一个情绪多变、容易愤怒的人 | 待人工确认 |  |
-| 59 | X62 | open_mindedness | False | 我是一个有创意、能想出新点子的人 | 待人工确认 |  |
+| 0 | X3 | extraversion | False | 我是一个性格外向、喜欢交际的人 | 已按官方中文 BFI-2 计分键确认 | Colby Chinese BFI-2 self-report form and scoring key |
+| 1 | X4 | agreeableness | False | 我是一个心肠柔软、有同情心的人 | 已按官方中文 BFI-2 计分键确认 | Colby Chinese BFI-2 self-report form and scoring key |
+| 2 | X5 | conscientiousness | True | 我是一个缺乏条理的人 | 已按官方中文 BFI-2 计分键确认 | Colby Chinese BFI-2 self-report form and scoring key |
+| 3 | X6 | negative_emotionality | True | 我是一个从容、善于处理压力的人 | 已按官方中文 BFI-2 计分键确认 | Colby Chinese BFI-2 self-report form and scoring key |
+| 4 | X7 | open_mindedness | True | 我是一个对艺术没有什么兴趣的人 | 已按官方中文 BFI-2 计分键确认 | Colby Chinese BFI-2 self-report form and scoring key |
+| 5 | X8 | extraversion | False | 我是一个性格坚定自信、敢于表达自己的观点的人 | 已按官方中文 BFI-2 计分键确认 | Colby Chinese BFI-2 self-report form and scoring key |
+| 6 | X9 | agreeableness | False | 我是一个为人恭谦、尊重他人的人 | 已按官方中文 BFI-2 计分键确认 | Colby Chinese BFI-2 self-report form and scoring key |
+| 7 | X10 | conscientiousness | True | 我是一个比较懒的人 | 已按官方中文 BFI-2 计分键确认 | Colby Chinese BFI-2 self-report form and scoring key |
+| 8 | X11 | negative_emotionality | True | 我是一个经历挫折后仍能保持积极心态的人 | 已按官方中文 BFI-2 计分键确认 | Colby Chinese BFI-2 self-report form and scoring key |
+| 9 | X12 | open_mindedness | False | 我是一个对许多不同的事物都感兴趣的人 | 已按官方中文 BFI-2 计分键确认 | Colby Chinese BFI-2 self-report form and scoring key |
+| 10 | X13 | extraversion | True | 我是一个很少觉得兴奋或者特别想要做什么的人 | 已按官方中文 BFI-2 计分键确认 | Colby Chinese BFI-2 self-report form and scoring key |
+| 11 | X14 | agreeableness | True | 我是一个常常挑别人毛病的人 | 已按官方中文 BFI-2 计分键确认 | Colby Chinese BFI-2 self-report form and scoring key |
+| 12 | X15 | conscientiousness | False | 我是一个可信赖的、可靠的人 | 已按官方中文 BFI-2 计分键确认 | Colby Chinese BFI-2 self-report form and scoring key |
+| 13 | X16 | negative_emotionality | False | 我是一个喜怒无常、情绪起伏较多的人 | 已按官方中文 BFI-2 计分键确认 | Colby Chinese BFI-2 self-report form and scoring key |
+| 14 | X17 | open_mindedness | False | 我是一个善于创造、能找到聪明的方法来做事的人 | 已按官方中文 BFI-2 计分键确认 | Colby Chinese BFI-2 self-report form and scoring key |
+| 15 | X18 | extraversion | True | 我是一个比较安静的人 | 已按官方中文 BFI-2 计分键确认 | Colby Chinese BFI-2 self-report form and scoring key |
+| 16 | X19 | agreeableness | True | 我是一个对他人没有什么同情心的人 | 已按官方中文 BFI-2 计分键确认 | Colby Chinese BFI-2 self-report form and scoring key |
+| 17 | X20 | conscientiousness | False | 我是一个做事有计划有条理的人 | 已按官方中文 BFI-2 计分键确认 | Colby Chinese BFI-2 self-report form and scoring key |
+| 18 | X21 | negative_emotionality | False | 我是一个容易紧张的人 | 已按官方中文 BFI-2 计分键确认 | Colby Chinese BFI-2 self-report form and scoring key |
+| 19 | X22 | open_mindedness | False | 我是一个着迷于艺术、音乐或文学的人 | 已按官方中文 BFI-2 计分键确认 | Colby Chinese BFI-2 self-report form and scoring key |
+| 20 | X23 | extraversion | False | 我是一个常常处于主导地位、像个领导一样的人 | 已按官方中文 BFI-2 计分键确认 | Colby Chinese BFI-2 self-report form and scoring key |
+| 21 | X24 | agreeableness | True | 我是一个常与他人意见不和的人 | 已按官方中文 BFI-2 计分键确认 | Colby Chinese BFI-2 self-report form and scoring key |
+| 22 | X25 | conscientiousness | True | 我是一个很难开始行动起来去完成一项任务的人 | 已按官方中文 BFI-2 计分键确认 | Colby Chinese BFI-2 self-report form and scoring key |
+| 23 | X26 | negative_emotionality | True | 我是一个觉得有安全感、对自己满意的人 | 已按官方中文 BFI-2 计分键确认 | Colby Chinese BFI-2 self-report form and scoring key |
+| 24 | X27 | open_mindedness | True | 我是一个不喜欢知识性或者哲学性强的讨论的人 | 已按官方中文 BFI-2 计分键确认 | Colby Chinese BFI-2 self-report form and scoring key |
+| 25 | X28 | extraversion | True | 我是一个不如别人有活力的人 | 已按官方中文 BFI-2 计分键确认 | Colby Chinese BFI-2 self-report form and scoring key |
+| 26 | X29 | agreeableness | False | 我是一个宽宏大量的人 | 已按官方中文 BFI-2 计分键确认 | Colby Chinese BFI-2 self-report form and scoring key |
+| 27 | X30 | conscientiousness | True | 我是一个有时比较没有责任心的人 | 已按官方中文 BFI-2 计分键确认 | Colby Chinese BFI-2 self-report form and scoring key |
+| 28 | X31 | negative_emotionality | True | 我是一个情绪稳定、不易生气的人 | 已按官方中文 BFI-2 计分键确认 | Colby Chinese BFI-2 self-report form and scoring key |
+| 29 | X32 | open_mindedness | True | 我是一个几乎没有什么创造性的人 | 已按官方中文 BFI-2 计分键确认 | Colby Chinese BFI-2 self-report form and scoring key |
+| 30 | X33 | extraversion | True | 我是一个有时会害羞、比较内向的人 | 已按官方中文 BFI-2 计分键确认 | Colby Chinese BFI-2 self-report form and scoring key |
+| 31 | X34 | agreeableness | False | 我是一个乐于助人、待人无私的人 | 已按官方中文 BFI-2 计分键确认 | Colby Chinese BFI-2 self-report form and scoring key |
+| 32 | X35 | conscientiousness | False | 我是一个习惯让事物保持整洁有序的人 | 已按官方中文 BFI-2 计分键确认 | Colby Chinese BFI-2 self-report form and scoring key |
+| 33 | X36 | negative_emotionality | False | 我是一个时常忧心忡忡、担心很多事情的人 | 已按官方中文 BFI-2 计分键确认 | Colby Chinese BFI-2 self-report form and scoring key |
+| 34 | X37 | open_mindedness | False | 我是一个重视艺术与审美的人 | 已按官方中文 BFI-2 计分键确认 | Colby Chinese BFI-2 self-report form and scoring key |
+| 35 | X38 | extraversion | True | 我感觉自己很难对他人产生影响 | 已按官方中文 BFI-2 计分键确认 | Colby Chinese BFI-2 self-report form and scoring key |
+| 36 | X39 | agreeableness | True | 我是一个有时对人比较粗鲁的人 | 已按官方中文 BFI-2 计分键确认 | Colby Chinese BFI-2 self-report form and scoring key |
+| 37 | X40 | conscientiousness | False | 我是一个有效率、做事有始有终的人 | 已按官方中文 BFI-2 计分键确认 | Colby Chinese BFI-2 self-report form and scoring key |
+| 38 | X41 | negative_emotionality | False | 我是一个时常觉得悲伤的人 | 已按官方中文 BFI-2 计分键确认 | Colby Chinese BFI-2 self-report form and scoring key |
+| 39 | X42 | open_mindedness | False | 我是一个思想深刻的人 | 已按官方中文 BFI-2 计分键确认 | Colby Chinese BFI-2 self-report form and scoring key |
+| 40 | X43 | extraversion | False | 我是一个精力充沛的人 | 已按官方中文 BFI-2 计分键确认 | Colby Chinese BFI-2 self-report form and scoring key |
+| 41 | X44 | agreeableness | True | 我是一个不相信别人、怀疑别人意图的人 | 已按官方中文 BFI-2 计分键确认 | Colby Chinese BFI-2 self-report form and scoring key |
+| 42 | X45 | conscientiousness | False | 我是一个可靠的、总是值得他人信赖的人 | 已按官方中文 BFI-2 计分键确认 | Colby Chinese BFI-2 self-report form and scoring key |
+| 43 | X46 | negative_emotionality | True | 我是一个能够控制自己的情绪的人 | 已按官方中文 BFI-2 计分键确认 | Colby Chinese BFI-2 self-report form and scoring key |
+| 44 | X47 | open_mindedness | True | 我是一个缺乏想象力的人 | 已按官方中文 BFI-2 计分键确认 | Colby Chinese BFI-2 self-report form and scoring key |
+| 45 | X48 | extraversion | False | 我是一个爱说话、健谈的人 | 已按官方中文 BFI-2 计分键确认 | Colby Chinese BFI-2 self-report form and scoring key |
+| 46 | X49 | agreeableness | True | 我是一个有时对人冷淡、漠不关心的人 | 已按官方中文 BFI-2 计分键确认 | Colby Chinese BFI-2 self-report form and scoring key |
+| 47 | X50 | conscientiousness | True | 我是一个乱糟糟的、不爱收拾的人 | 已按官方中文 BFI-2 计分键确认 | Colby Chinese BFI-2 self-report form and scoring key |
+| 48 | X51 | negative_emotionality | True | 我是一个很少觉得焦虑或者害怕的人 | 已按官方中文 BFI-2 计分键确认 | Colby Chinese BFI-2 self-report form and scoring key |
+| 49 | X52 | open_mindedness | True | 我是一个觉得诗歌、戏剧很无聊的人 | 已按官方中文 BFI-2 计分键确认 | Colby Chinese BFI-2 self-report form and scoring key |
+| 50 | X53 | extraversion | True | 我是一个更喜欢让别人来领头负责的人 | 已按官方中文 BFI-2 计分键确认 | Colby Chinese BFI-2 self-report form and scoring key |
+| 51 | X54 | agreeableness | False | 我是一个待人谦逊礼让的人 | 已按官方中文 BFI-2 计分键确认 | Colby Chinese BFI-2 self-report form and scoring key |
+| 52 | X55 | conscientiousness | False | 我是一个有恒心、能坚持把事情做完的人 | 已按官方中文 BFI-2 计分键确认 | Colby Chinese BFI-2 self-report form and scoring key |
+| 53 | X56 | negative_emotionality | False | 我是一个时常觉得郁郁寡欢的人 | 已按官方中文 BFI-2 计分键确认 | Colby Chinese BFI-2 self-report form and scoring key |
+| 54 | X57 | open_mindedness | True | 我是一个对抽象的概念和想法没什么兴趣的人 | 已按官方中文 BFI-2 计分键确认 | Colby Chinese BFI-2 self-report form and scoring key |
+| 55 | X58 | extraversion | False | 我是一个充满热情的人 | 已按官方中文 BFI-2 计分键确认 | Colby Chinese BFI-2 self-report form and scoring key |
+| 56 | X59 | agreeableness | False | 我是一个把人往最好的方面想的人 | 已按官方中文 BFI-2 计分键确认 | Colby Chinese BFI-2 self-report form and scoring key |
+| 57 | X60 | conscientiousness | True | 我是一个有时候会做出一些不负责任的行为的人 | 已按官方中文 BFI-2 计分键确认 | Colby Chinese BFI-2 self-report form and scoring key |
+| 58 | X61 | negative_emotionality | False | 我是一个情绪多变、容易愤怒的人 | 已按官方中文 BFI-2 计分键确认 | Colby Chinese BFI-2 self-report form and scoring key |
+| 59 | X62 | open_mindedness | False | 我是一个有创意、能想出新点子的人 | 已按官方中文 BFI-2 计分键确认 | Colby Chinese BFI-2 self-report form and scoring key |

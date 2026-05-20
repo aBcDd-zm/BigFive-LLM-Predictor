@@ -10,6 +10,7 @@ sys.path.insert(0, str(PROJECT_ROOT))
 sys.path.insert(0, str(PROJECT_ROOT / "src"))
 
 from constant import Constant  # noqa: E402
+from constant import BFI_REVERSE_ITEM_NUMBERS  # noqa: E402
 from scripts.check_bfi_items import validate_bfi_items  # noqa: E402
 
 
@@ -19,6 +20,19 @@ def test_bfi_items_integrity():
     assert stats["total_items"] == 60
     assert sum(stats["trait_counts"].values()) == 60
     assert sum(stats["reverse_counts"].values()) == 60
+    assert set(stats["trait_counts"].values()) == {12}
+    assert stats["reverse_counts"][True] == 30
+    assert stats["reverse_counts"][False] == 30
+
+
+def test_bfi_items_use_official_bfi2_reverse_key():
+    reverse_item_numbers = {
+        item["index"] + 1
+        for item in Constant.BFI_ITEMS
+        if item["reverse"]
+        }
+
+    assert reverse_item_numbers == BFI_REVERSE_ITEM_NUMBERS
 
 
 def test_bfi_items_validation_rejects_duplicate_ids():

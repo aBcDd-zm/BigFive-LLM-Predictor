@@ -14,7 +14,8 @@ from constant import Constant  # noqa: E402
 
 DEFAULT_MARKDOWN_PATH = PROJECT_ROOT / "docs" / "BFI_ITEM_REVIEW_TABLE.md"
 DEFAULT_CSV_PATH = PROJECT_ROOT / "outputs" / "bfi_item_review_table.csv"
-REVIEW_STATUS = "待人工确认"
+REVIEW_STATUS = "已按官方中文 BFI-2 计分键确认"
+REVIEW_NOTE = "Colby Chinese BFI-2 self-report form and scoring key"
 TABLE_COLUMNS = (
     "index",
     "id",
@@ -40,7 +41,7 @@ def build_review_rows(items):
             "reverse": item["reverse"],
             "text": item["text"],
             "suggested_review_status": REVIEW_STATUS,
-            "reviewer_note": "",
+            "reviewer_note": REVIEW_NOTE,
             })
     return rows
 
@@ -51,7 +52,8 @@ def write_markdown(rows, output_path):
         "# BFI Item Review Table",
         "",
         "Generated from `Constant.BFI_ITEMS`. "
-        "The `trait` and `reverse` values are exported as-is for manual review.",
+        "The `trait`, `reverse`, and item wording values have been reviewed "
+        "against the official Chinese BFI-2 scoring key.",
         "",
         "| index | id | trait | reverse | text | suggested_review_status | reviewer_note |",
         "|---:|---|---|---|---|---|---|",
@@ -68,7 +70,7 @@ def write_markdown(rows, output_path):
 def write_csv(rows, output_path):
     output_path.parent.mkdir(parents=True, exist_ok=True)
     with output_path.open("w", encoding="utf-8", newline="") as csv_file:
-        writer = csv.DictWriter(csv_file, fieldnames=TABLE_COLUMNS)
+        writer = csv.DictWriter(csv_file, fieldnames=TABLE_COLUMNS, lineterminator="\n")
         writer.writeheader()
         writer.writerows(rows)
 
