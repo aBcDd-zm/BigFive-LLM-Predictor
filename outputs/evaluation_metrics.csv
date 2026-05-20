@@ -1,6 +1,6 @@
-trait,pcc,mae,n,prediction_column,ground_truth_column
-open_mindedness,,1.0333333333333332,3,pred_open_mindedness,open_mindedness
-conscientiousness,,0.7666666666666667,3,pred_conscientiousness,conscientiousness
-extraversion,,2.433333333333333,3,pred_extraversion,extraversion
-agreeableness,,2.0,3,pred_agreeableness,agreeableness
-negative_emotionality,,1.3,3,pred_negative_emotionality,negative_emotionality
+model_name,backend,try_id,trait,pcc,mae,n,prediction_column,ground_truth_column
+kurileo/Gemma-2-2b-it-BFI-Anonymous,mock,0,open_mindedness,,1.0333333333333332,3,pred_open_mindedness,open_mindedness
+kurileo/Gemma-2-2b-it-BFI-Anonymous,mock,0,conscientiousness,,0.7666666666666667,3,pred_conscientiousness,conscientiousness
+kurileo/Gemma-2-2b-it-BFI-Anonymous,mock,0,extraversion,,2.433333333333333,3,pred_extraversion,extraversion
+kurileo/Gemma-2-2b-it-BFI-Anonymous,mock,0,agreeableness,,2.0,3,pred_agreeableness,agreeableness
+kurileo/Gemma-2-2b-it-BFI-Anonymous,mock,0,negative_emotionality,,1.3,3,pred_negative_emotionality,negative_emotionality
