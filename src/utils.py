@@ -13,18 +13,29 @@ def parse_session_data(data_path: str):
     session_li = []
     for file_path in file_li:
         utterance_li = []
-        with open(file_path, 'r') as f:
+        with open(file_path, 'r', encoding='utf-8') as f:
             lines = f.readlines()
-        for line in lines:
+        for line_no, line in enumerate(lines, start=1):
+            stripped = line.strip()
+            if not stripped:
+                continue
+            match = re.match(r'^(咨询师|来访者)\s*[：:]\s*(.*)$', stripped)
+            if not match:
+                raise ValueError(
+                    f"Invalid dialogue line in {file_path}:{line_no}. "
+                    "Expected '咨询师：...' or '来访者：...'."
+                    )
             utterance_li.append({
-                "speaker": line.split(":")[0],
-                "utter": line.split(":")[1].strip()
+                "speaker": match.group(1),
+                "utter": match.group(2).strip()
                 })
+        file_name = os.path.splitext(os.path.basename(file_path))[0]
+        name_parts = file_name.split('_')
         session_li.append({
-            "session_id": file_path.split("/")[-1].split(".")[0],
-            "user": file_path.split("/")[-1].split(".")[0].split('_')[0],
-            "chat_round": file_path.split("/")[-1].split(".")[0].split('_')[2],
-            "timestamp": file_path.split("/")[-1].split(".")[0].split('_')[3],
+            "session_id": file_name,
+            "user": name_parts[0] if name_parts else file_name,
+            "chat_round": name_parts[2] if len(name_parts) > 2 else "",
+            "timestamp": name_parts[3] if len(name_parts) > 3 else "",
             "utterance_li": utterance_li
             })
 
@@ -80,8 +91,9 @@ NUMBER_PATTERN = re.compile(r'([1-5])')
 
 
 def extract_choice(sentence):
+    sentence = str(sentence)
     text_match = TEXT_PATTERN.search(sentence)
-    if text_match and len(text_match.group(0)) == 1:
+    if text_match:
         return CHOICES[text_match.group(0)]
 
     number_match = NUMBER_PATTERN.search(sentence)
@@ -92,8 +104,16 @@ def extract_choice(sentence):
 
 
 def calculate_trait_scores(series, trait_indices):
-    pred_scores = np.mean([series['pred'][str(i)] for i in trait_indices])
-    return pred_scores
+    values = []
+    for idx in trait_indices:
+        value = np.nan
+        pred_series = series.get('pred', {})
+        if str(idx) in pred_series:
+            value = pred_series[str(idx)]
+        elif idx in pred_series:
+            value = pred_series[idx]
+        values.append(value)
+    return np.nanmean(values)
 
 
 def convert_scores(series):

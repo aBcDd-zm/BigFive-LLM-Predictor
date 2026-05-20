@@ -1,0 +1,4 @@
+model_name,backend,user_id,session_id,chat_round,try_id,pred_extraversion,pred_agreeableness,pred_conscientiousness,pred_negative_emotionality,pred_open_mindedness,pred_O,pred_C,pred_E,pred_A,pred_N
+kurileo/Gemma-2-2b-it-BFI-Anonymous,mock,p001,p001_chat_6_202605200001,6,0,1.0,2.0,3.0,4.0,5.0,5.0,3.0,1.0,2.0,4.0
+kurileo/Gemma-2-2b-it-BFI-Anonymous,mock,p002,p002_chat_7_202605200002,7,0,1.0,2.0,3.0,4.0,5.0,5.0,3.0,1.0,2.0,4.0
+kurileo/Gemma-2-2b-it-BFI-Anonymous,mock,p003,p003_chat_6_202605200003,6,0,1.0,2.0,3.0,4.0,5.0,5.0,3.0,1.0,2.0,4.0
