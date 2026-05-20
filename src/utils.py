@@ -1,3 +1,4 @@
+import json
 import os
 import re
 from glob import glob
@@ -88,6 +89,10 @@ CHOICES = {
 
 TEXT_PATTERN = re.compile(r'非常不同意|不太同意|中立|比较同意|非常同意')
 NUMBER_PATTERN = re.compile(r'([1-5])')
+MARKDOWN_JSON_PATTERN = re.compile(r'```(?:json)?\s*(\{.*?\})\s*```', re.DOTALL | re.IGNORECASE)
+EXPLICIT_CHOICE_PATTERN = re.compile(
+    r'(?:最终)?(?:我)?(?:的)?(?:答案是|选项是|选择|选)\s*[:：]?\s*([1-5])'
+    )
 
 
 def extract_choice(sentence):
@@ -101,6 +106,72 @@ def extract_choice(sentence):
         return int(number_match.group(1))
 
     return -1
+
+
+def _coerce_choice(value):
+    if isinstance(value, str):
+        value = value.strip()
+    try:
+        choice = int(value)
+    except (TypeError, ValueError):
+        return -1
+    return choice if 1 <= choice <= 5 else -1
+
+
+def _extract_json_object(content):
+    stripped = str(content).strip()
+    candidates = [stripped]
+
+    markdown_match = MARKDOWN_JSON_PATTERN.search(stripped)
+    if markdown_match:
+        candidates.insert(0, markdown_match.group(1).strip())
+
+    decoder = json.JSONDecoder()
+    brace_positions = [idx for idx, char in enumerate(stripped) if char == "{"]
+    for idx in brace_positions:
+        candidates.append(stripped[idx:])
+
+    for candidate in candidates:
+        try:
+            parsed = json.loads(candidate)
+        except json.JSONDecodeError:
+            try:
+                parsed, _ = decoder.raw_decode(candidate)
+            except json.JSONDecodeError:
+                continue
+        if isinstance(parsed, dict):
+            return parsed
+    return None
+
+
+def _extract_explicit_text_choice(content):
+    text_match = TEXT_PATTERN.search(str(content))
+    if text_match:
+        return CHOICES[text_match.group(0)]
+
+    number_match = EXPLICIT_CHOICE_PATTERN.search(str(content))
+    if number_match:
+        return _coerce_choice(number_match.group(1))
+
+    return extract_choice(content)
+
+
+def extract_choice_json(content):
+    """
+    Prefer parsing a JSON object with a choice field, then fall back to text extraction.
+
+    Supported examples:
+    {"choice": 5}
+    {"choice": "5"}
+    ```json
+    {"choice": 4}
+    ```
+    """
+    parsed = _extract_json_object(content)
+    if parsed is not None:
+        return _coerce_choice(parsed.get("choice"))
+
+    return _extract_explicit_text_choice(content)
 
 
 def calculate_trait_scores(series, trait_indices):

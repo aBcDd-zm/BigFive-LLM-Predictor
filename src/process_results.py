@@ -5,7 +5,7 @@ import os
 import pandas as pd
 from tqdm import tqdm
 
-from utils import convert_scores, extract_choice
+from utils import convert_scores, extract_choice_json
 
 
 OCEAN_ALIASES = {
@@ -81,7 +81,7 @@ def load_responses(file_paths):
                 raise ValueError(f"Missing uuid in {response_file}:{line_no}")
 
             session_id, user_id, chat_round, question_id, try_id = parse_uuid(uuid)
-            pred = extract_choice(content)
+            pred = extract_choice_json(content)
 
             results.append({
                 "model_name": model_name,

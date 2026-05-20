@@ -14,6 +14,7 @@ TIMESTAMP = datetime.now().strftime("%Y%m%d-%H%M%S")
 RANDOM_SEED = 1337
 
 REQUEST_TEMPLATE = """在本次心理咨询结束之前，请根据聊天内容与你自身的情况完成下面这道选择题：
+
 ---
 题目：{}
 选项：
@@ -23,7 +24,19 @@ REQUEST_TEMPLATE = """在本次心理咨询结束之前，请根据聊天内容�
 4. 比较同意
 5. 非常同意
 ---
-请告诉我你的选项并说明理由："""
+
+请严格输出 JSON，不要输出任何其他文字。格式如下：
+
+{{
+  "choice": 1,
+  "label": "非常不同意",
+  "reason": "一句话说明理由"
+}}
+
+要求：
+- choice 必须是 1 到 5 的整数
+- label 必须与 choice 对应
+- reason 简短说明即可"""
 SYSTEM_PROMPT = ("Act like a real human and do not mention anything with AI. "
                  "表现得像个真正的人类，不要提及任何与人工智能有关的事情。"
                  "作为这次心理咨询的来访者，你将与你的咨询师进行对话。")
