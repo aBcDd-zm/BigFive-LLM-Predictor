@@ -174,31 +174,58 @@ def extract_choice_json(content):
     return _extract_explicit_text_choice(content)
 
 
-def calculate_trait_scores(series, trait_indices):
-    values = []
-    for idx in trait_indices:
-        value = np.nan
-        pred_series = series.get('pred', {})
-        if str(idx) in pred_series:
-            value = pred_series[str(idx)]
-        elif idx in pred_series:
-            value = pred_series[idx]
-        values.append(value)
-    return np.nanmean(values)
+def _get_pred_value(series, item_index):
+    pred_series = series.get('pred', {})
+    if hasattr(pred_series, "get"):
+        value = pred_series.get(str(item_index), np.nan)
+        if not _is_missing(value):
+            return value
+        return pred_series.get(item_index, np.nan)
+    return np.nan
+
+
+def _is_missing(value):
+    try:
+        return bool(np.isnan(value))
+    except TypeError:
+        return value is None
+
+
+def _to_numeric_score(value):
+    try:
+        score = float(value)
+    except (TypeError, ValueError):
+        return np.nan
+    return np.nan if np.isnan(score) else score
+
+
+def _score_bfi_item(series, item):
+    score = _to_numeric_score(_get_pred_value(series, item["index"]))
+    if np.isnan(score):
+        return np.nan
+    return 6 - score if item.get("reverse", False) else score
+
+
+def calculate_trait_scores(series, trait_items):
+    values = [_score_bfi_item(series, item) for item in trait_items]
+    valid_values = [value for value in values if not np.isnan(value)]
+    if not valid_values:
+        return np.nan
+    return float(np.mean(valid_values))
 
 
 def convert_scores(series):
-    traits = {
-        "extraversion": range(0, 56, 5),
-        "agreeableness": range(1, 57, 5),
-        "conscientiousness": range(2, 58, 5),
-        "negative_emotionality": range(3, 59, 5),
-        "open_mindedness": range(4, 60, 5)
-        }
-
+    trait_order = [
+        "extraversion",
+        "agreeableness",
+        "conscientiousness",
+        "negative_emotionality",
+        "open_mindedness",
+        ]
     scores = {}
-    for trait, indices in traits.items():
-        pred_score = calculate_trait_scores(series, indices)
+    for trait in trait_order:
+        trait_items = [item for item in Constant.BFI_ITEMS if item["trait"] == trait]
+        pred_score = calculate_trait_scores(series, trait_items)
         scores[f"pred_{trait}"] = pred_score
 
     return scores

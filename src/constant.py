@@ -1,6 +1,30 @@
 from dataclasses import dataclass
 
 
+BFI_TRAIT_ORDER = (
+    "extraversion",
+    "agreeableness",
+    "conscientiousness",
+    "negative_emotionality",
+    "open_mindedness",
+    )
+
+
+def _parse_bfi_item(index, item):
+    item_id, text = item.split(".", 1)
+    return {
+        "index": index,
+        "id": item_id.strip(),
+        "text": text.strip(),
+        "trait": BFI_TRAIT_ORDER[index % len(BFI_TRAIT_ORDER)],
+        "reverse": False,
+        }
+
+
+def build_bfi_items(items):
+    return [_parse_bfi_item(index, item) for index, item in enumerate(items)]
+
+
 @dataclass
 class Constant:
     API_KEY = ""  # Your OpenAI API key
@@ -68,3 +92,6 @@ class Constant:
                    'X61.我是一个情绪多变、容易愤怒的人',
                    'X62.我是一个有创意、能想出新点子的人'
                    ]
+
+
+Constant.BFI_ITEMS = build_bfi_items(Constant.BFI_ITEM_LI)
